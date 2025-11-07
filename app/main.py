@@ -50,7 +50,7 @@ def health():
     return {"status": "ok"}
 
 
-#Below are all the code from previous lab
+
 # ---------- COURSES ----------
 @app.post("/api/courses", response_model=CourseRead, status_code=201)
 def create_course(course: CourseCreate, db: Session = Depends(get_db)):
