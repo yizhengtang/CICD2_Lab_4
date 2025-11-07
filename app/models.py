@@ -19,9 +19,8 @@ class ProjectDB(Base):
     id: Mapped[int] = mapped_column(primary_key=True) 
     name: Mapped[str] = mapped_column(String, nullable=False) 
     description: Mapped[str] = mapped_column(String, nullable=True) 
-    owner_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), 
-nullable=False) 
-    owner: Mapped["UserDB"] = relationship(back_populates=".") 
+    owner_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False) 
+    owner: Mapped["UserDB"] = relationship(back_populates="projects") 
  
  
 # B) Independent table 
